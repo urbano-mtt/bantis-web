@@ -1,59 +1,145 @@
-# BantisWeb
+# 🚀 BantisWeb
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.6.
+Bienvenido al repositorio de **BantisWeb**, la interfaz web del sistema de nómina inteligente **Bantis**. Esta aplicación fue generada con [Angular CLI](https://github.com/angular/angular-cli) versión 19.2.6 y está diseñada para brindar una experiencia moderna y eficiente en la gestión de recursos humanos y pagos.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🖥️ Tecnologías Principales
+
+- **Angular** 19.2.6
+- **TypeScript**
+- **RxJS**
+- **Tailwind CSS / SCSS (si aplica)**
+- **Firebase / Firestore (si aplica)**
+- **PrimeNG / Material UI (si aplica)**
+
+---
+
+## 🔧 Comenzar
+
+### Clonar el repositorio
+
+```bash
+git clone https://github.com/tu-usuario/bantis-web.git
+cd bantis-web
+```
+
+### Instalar dependencias
+
+```bash
+npm install
+```
+
+---
+
+## 🌐 Servidor de Desarrollo
+
+Para iniciar el servidor local de desarrollo:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Luego abre tu navegador en:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+http://localhost:4200/
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Cualquier cambio en los archivos fuente recargará automáticamente la aplicación.
+
+---
+
+## 📦 Comandos Útiles
+
+### Generar componentes
 
 ```bash
-ng generate --help
+ng generate component components/NombreDelComponente --standalone --inline-style --skip-tests
 ```
 
-## Building
-
-To build the project run:
+### Construir para producción
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Los archivos resultantes se encontrarán en la carpeta `dist/`.
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### Ejecutar pruebas unitarias
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+Utiliza el framework [Karma](https://karma-runner.github.io) por defecto.
 
-For end-to-end (e2e) testing, run:
+### Ejecutar pruebas end-to-end
 
 ```bash
 ng e2e
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+⚠️ Angular CLI no incluye framework e2e por defecto. Puedes elegir el que mejor se adapte a tu stack (Cypress, Playwright, etc.).
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 🧩 Estructura de Carpetas (src/app)
+
+```text
+├── app/
+│   ├── components/        → Componentes UI reutilizables
+│   │   ├── header/
+│   │   ├── hero/
+│   │   └── ...
+│   ├── pages/             → Vistas principales (rutas)
+│   ├── services/          → Servicios (API, Auth, etc.)
+│   ├── models/            → Interfaces y tipos
+│   └── app.config.ts      → Configuración general
+```
+
+---
+
+## 💡 Buenas prácticas
+
+- Componentes standalone sin CSS por defecto
+- Uso de `signals` y `inputs/outputs` minimalistas
+- Dividir en componentes pequeños y reutilizables
+- Mantener los servicios puros y desacoplados
+- Validaciones reactivas en formularios
+
+---
+
+## 📘 Recursos Adicionales
+
+- [Angular DevTools](https://angular.dev/tools/devtools)
+- [Angular CLI Commands](https://angular.dev/tools/cli)
+- [RxJS Docs](https://rxjs.dev/guide/overview)
+- [Guía de estilos Angular (Oficial)](https://angular.io/guide/styleguide)
+
+---
+
+## 🤝 Contribuciones
+
+¿Deseas colaborar? ¡Eres bienvenido!
+1. Haz un fork
+2. Crea una rama (`git checkout -b feature/nueva-funcionalidad`)
+3. Realiza tus cambios y haz commit (`git commit -m 'Agrega nueva funcionalidad'`)
+4. Haz push a tu rama (`git push origin feature/nueva-funcionalidad`)
+5. Abre un Pull Request
+
+---
+
+## 🧾 Licencia
+
+Este proyecto es propiedad de **Máster Tech Team** y su código fuente está bajo licencia privada. Contacta con el equipo para más detalles.
+
+---
+
+## 👨‍💻 Desarrollado por
+
+**Máster Tech Team**  
+Contacto: [urbanoballesteros@gmail.com](mailto:urbanoballesteros@gmail.com)  
+Sitio: [progreza.mx](https://progreza.mx)
+
+---
