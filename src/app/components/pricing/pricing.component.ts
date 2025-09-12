@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import { IntersectionObserverService } from '../../services/intersection-observer.service';
 import { Plan } from '../../models/plan.model';
+import { CommonModule } from '@angular/common';
+import { ScrollAnimationComponent } from '../../comon-components/scroll-animation/scroll-animation.component';
+import { BackgroundElementsComponent } from '../../comon-components/background-elements/background-elements.component';
 
 @Component({
     selector: 'app-pricing',
-    imports: [],
+    imports: [CommonModule, ScrollAnimationComponent, BackgroundElementsComponent],
     templateUrl: './pricing.component.html',
     styles: [`
         :host {

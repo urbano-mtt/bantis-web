@@ -1,0 +1,6 @@
+export interface ContactInfo {
+    icon: string;
+    title: string;
+    value: string;
+    link: string;
+}

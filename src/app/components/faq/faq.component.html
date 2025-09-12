@@ -1,1 +1,49 @@
-<p>faq works!</p>
+<section id="faq" class="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+    <div class="max-w-4xl mx-auto">
+        <app-scroll-animation variant="fadeIn" class="text-center mb-16 block">
+            <h2 class="text-3xl sm:text-4xl mb-4">Preguntas Frecuentes</h2>
+            <p class="text-xl text-muted-foreground">
+                Encuentra respuestas a preguntas comunes sobre las soluciones de nómina de Bantis
+            </p>
+        </app-scroll-animation>
+
+        <app-scroll-animation variant="slideUp" [delay]="0.2" class="block">
+            <div class="space-y-4">
+                <div *ngFor="let faq of faqs; let i = index"
+                    class="bg-muted/30 rounded-xl border border-border/50 px-6 hover:bg-muted/50 transition-all duration-500"
+                    [class.opacity-100]="isVisible" [class.translate-y-0]="isVisible" [class.opacity-0]="!isVisible"
+                    [class.translate-y-5]="!isVisible" [style.transition-delay]="(i * 100) + 'ms'">
+                    <button class="w-full text-left py-6 flex justify-between items-center group"
+                        (click)="toggleFAQ(i)">
+                        <span class="text-foreground group-hover:text-primary transition-colors pr-4">
+                            {{ faq.question }}
+                        </span>
+                        <svg [class.rotate-180]="faq.isOpen"
+                            class="w-5 h-5 text-muted-foreground transition-transform duration-200 flex-shrink-0"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+
+                    <div class="overflow-hidden transition-all duration-300 ease-in-out"
+                        [style.max-height]="faq.isOpen ? '200px' : '0'" [class.pb-6]="faq.isOpen">
+                        <div class="text-muted-foreground leading-relaxed">
+                            {{ faq.answer }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </app-scroll-animation>
+
+        <app-scroll-animation variant="fadeIn" [delay]="0.5" class="text-center mt-12 block">
+            <p class="text-muted-foreground mb-4">
+                ¿Aún tienes preguntas? Estamos aquí para ayudar.
+            </p>
+            <button
+                class="border border-border bg-background hover:bg-primary hover:text-primary-foreground transition-all duration-200 rounded-xl px-8 py-2 hover:scale-105 active:scale-95">
+                Contactar Soporte
+            </button>
+        </app-scroll-animation>
+    </div>
+</section>
