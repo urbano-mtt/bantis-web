@@ -1,0 +1,75 @@
+<section id="benefits" class="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Left side - Benefits list -->
+            <div class="space-y-8">
+                <div class="space-y-4">
+                    <app-scroll-animation variant="fadeIn">
+                        <h2 class="text-3xl sm:text-4xl">Beneficios</h2>
+                    </app-scroll-animation>
+                    <div class="space-y-4">
+                        <div *ngFor="let benefit of benefits; let i = index"
+                            class="flex items-start gap-3 transform transition-all duration-700 ease-out"
+                            [class.translate-y-0]="isVisible" [class.opacity-100]="isVisible"
+                            [class.translate-y-8]="!isVisible" [class.opacity-0]="!isVisible"
+                            [style.transition-delay]="(i * 150) + 'ms'">
+                            <div
+                                class="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-0.5 transition-transform duration-300 hover:scale-125 hover:rotate-[360deg]">
+                                <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <p class="text-foreground/80 leading-relaxed">{{ benefit }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right side - Admin panel image -->
+            <app-scroll-animation variant="slideRight" [delay]="0.3">
+                <div class="relative">
+                    <div
+                        class="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-8 shadow-xl transition-transform duration-300 hover:scale-[1.02]">
+                        <div class="bg-card rounded-xl shadow-lg overflow-hidden">
+                            <div class="bg-gradient-to-r from-primary to-primary/80 px-6 py-4 transform origin-left transition-transform duration-800"
+                                [class.scale-x-100]="isPanelVisible" [class.scale-x-0]="!isPanelVisible">
+                                <h3 class="text-primary-foreground">Panel de Administración</h3>
+                            </div>
+                            <div class="p-6 space-y-4">
+                                <div *ngFor="let item of adminItems; let i = index"
+                                    class="flex items-center justify-between transform transition-all duration-500"
+                                    [class.translate-x-0]="isPanelVisible" [class.opacity-100]="isPanelVisible"
+                                    [class.-translate-x-5]="!isPanelVisible" [class.opacity-0]="!isPanelVisible"
+                                    [style.transition-delay]="(700 + (i * 100)) + 'ms'">
+                                    <span class="text-muted-foreground">{{ item.label }}</span>
+                                    <div class="flex items-center gap-2">
+                                        <div class="transition-transform duration-300 hover:rotate-[360deg]">
+                                            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </div>
+                                        <span class="text-green-600">{{ item.status }}</span>
+                                    </div>
+                                </div>
+                                <div class="mt-6 bg-muted rounded-lg p-4 transform transition-all duration-600"
+                                    [class.scale-100]="isPanelVisible" [class.opacity-100]="isPanelVisible"
+                                    [class.scale-75]="!isPanelVisible" [class.opacity-0]="!isPanelVisible"
+                                    style="transition-delay: 1000ms">
+                                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                        alt="Dashboard analytics" class="w-full h-32 object-cover rounded-lg" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </app-scroll-animation>
+        </div>
+    </div>
+
+    <!-- Background elements -->
+    <app-background-elements intensity="subtle" />
+</section>

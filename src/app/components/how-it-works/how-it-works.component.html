@@ -1,0 +1,98 @@
+<section id="how-it-works" class="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30 relative overflow-hidden">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-[0.02]">
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 20% 20%, rgba(120, 119, 198, 0.3) 0%, transparent 50%), 
+                                   radial-gradient(circle at 80% 80%, rgba(255, 119, 198, 0.3) 0%, transparent 50%);">
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto relative">
+        <app-scroll-animation variant="fadeIn" class="text-center mb-16 block">
+            <h2 class="text-3xl sm:text-4xl mb-4">Cómo Funciona</h2>
+            <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
+                Cinco pasos simples para transformar tu proceso de gestión de nómina
+            </p>
+        </app-scroll-animation>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+            <div *ngFor="let step of steps; let i = index"
+                class="relative group transform transition-all duration-700 ease-out" [class.translate-y-0]="isVisible"
+                [class.opacity-100]="isVisible" [class.translate-y-12]="!isVisible" [class.opacity-0]="!isVisible"
+                [style.transition-delay]="(i * 150) + 'ms'">
+                <div class="bg-card rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 h-full border border-border/50 hover:-translate-y-2 hover:scale-[1.02]"
+                    [style.box-shadow]="getHoverShadow(i)">
+                    <div class="flex flex-col items-center text-center space-y-4">
+                        <!-- Step letter and icon -->
+                        <div class="relative">
+                            <div
+                                class="w-16 h-16 bg-primary rounded-full flex items-center justify-center transition-all duration-600 hover:scale-110 hover:rotate-[360deg]">
+                                <ng-container [ngSwitch]="step.icon">
+                                    <!-- Settings Icon -->
+                                    <svg *ngSwitchCase="'settings'" class="w-8 h-8 text-primary-foreground" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
+                                        </path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                    <!-- FileText Icon -->
+                                    <svg *ngSwitchCase="'filetext'" class="w-8 h-8 text-primary-foreground" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                        </path>
+                                    </svg>
+                                    <!-- Zap Icon -->
+                                    <svg *ngSwitchCase="'zap'" class="w-8 h-8 text-primary-foreground" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                    </svg>
+                                    <!-- CheckCircle Icon -->
+                                    <svg *ngSwitchCase="'checkcircle'" class="w-8 h-8 text-primary-foreground"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <!-- Send Icon -->
+                                    <svg *ngSwitchCase="'send'" class="w-8 h-8 text-primary-foreground" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                                    </svg>
+                                </ng-container>
+                            </div>
+                            <div
+                                class="absolute -top-2 -right-2 w-8 h-8 bg-accent rounded-full flex items-center justify-center border-2 border-background transition-transform duration-300 hover:scale-125">
+                                <span class="text-accent-foreground text-sm font-medium">{{ step.letter }}</span>
+                            </div>
+                        </div>
+
+                        <h3 class="text-lg text-foreground group-hover:text-primary transition-colors">
+                            {{ step.title }}
+                        </h3>
+                        <p class="text-muted-foreground text-sm leading-relaxed">
+                            {{ step.description }}
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Arrow connector for desktop -->
+                <div *ngIf="i < steps.length - 1"
+                    class="hidden lg:block absolute top-8 -right-4 z-10 transform transition-all duration-500"
+                    [class.translate-x-0]="isVisible" [class.opacity-100]="isVisible"
+                    [class.-translate-x-2.5]="!isVisible" [class.opacity-0]="!isVisible"
+                    [style.transition-delay]="(i * 100) + 'ms'">
+                    <div class="w-8 h-0.5 bg-primary/30"></div>
+                    <div
+                        class="absolute -right-1 -top-1 w-0 h-0 border-l-4 border-l-primary/30 border-t-2 border-t-transparent border-b-2 border-b-transparent">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background elements -->
+    <app-background-elements variant="geometric" />
+</section>

@@ -1,0 +1,40 @@
+<header class="bg-[color:var(--background)] shadow-sm sticky top-0 z-50 rounded-b-xl">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <!-- Logo -->
+            <div class="flex-shrink-0">
+                <h1 class="text-[color:var(--primary)]">Bantis</h1>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:block">
+                <div class="ml-10 flex items-baseline space-x-4">
+                    <a *ngFor="let item of navItems; trackBy: trackByName" [href]="item.href"
+                        [class]="getNavLinkClasses()">
+                        {{ item.name }}
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button type="button" [class]="getMobileButtonClasses()" (click)="toggleMenu()"
+                    [attr.aria-expanded]="isMenuOpen" aria-label="Abrir menú de navegación">
+                    <lucide-icon [img]="isMenuOpen ? xIcon : menuIcon" class="h-6 w-6">
+                    </lucide-icon>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div *ngIf="isMenuOpen" class="md:hidden" [@slideIn]>
+            <div
+                class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-[color:var(--background)] rounded-b-xl border-t border-[color:var(--border)]">
+                <a *ngFor="let item of navItems; trackBy: trackByName" [href]="item.href"
+                    [class]="getMobileNavLinkClasses()" (click)="closeMenu()">
+                    {{ item.name }}
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>

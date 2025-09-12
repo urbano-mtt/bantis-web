@@ -1,0 +1,52 @@
+<section class="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <app-background-elements variant="hero" intensity="subtle"></app-background-elements>
+
+    <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Left side - Text content -->
+            <app-scroll-animation variant="slideLeft" className="space-y-8">
+                <div class="space-y-4">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl" [@textAnimation]="animationState">
+                        Simplifica tu nómina con tecnología flexible y potente.
+                        <span class="text-[color:var(--primary)]" [@highlightAnimation]="highlightState">
+                            Bantis procesa lo complejo, tú decides el ritmo.
+                        </span>
+                    </h1>
+                    <p class="text-xl text-[color:var(--muted-foreground)] max-w-2xl" [@fadeAnimation]="fadeState">
+                        Transforma la gestión de tu nómina con nuestra plataforma inteligente que se adapta
+                        a cualquier país, cualquier sistema y cualquier nivel de complejidad.
+                    </p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4" [@buttonAnimation]="buttonState">
+                    <button
+                        class="bg-[color:var(--primary)] hover:bg-[color:var(--primary)]/90 text-[color:var(--primary-foreground)] px-8 py-4 rounded-xl transition-all duration-200 hover:scale-105 shadow-lg">
+                        Contratar Ahora
+                    </button>
+                    <button
+                        class="border border-[color:var(--border)] bg-[color:var(--background)] hover:bg-[color:var(--muted)] text-[color:var(--foreground)] px-8 py-4 rounded-xl transition-all duration-200 hover:scale-105">
+                        Saber Más
+                    </button>
+                </div>
+            </app-scroll-animation>
+
+            <!-- Right side - Image -->
+            <app-scroll-animation variant="slideRight" [delay]="300">
+                <div class="relative">
+                    <div class="rounded-2xl overflow-hidden shadow-xl" [@imageAnimation]="imageState"
+                        (mouseenter)="onImageHover(true)" (mouseleave)="onImageHover(false)">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80"
+                            alt="Happy office workers collaborating" class="w-full h-[400px] object-cover"
+                            loading="lazy">
+                    </div>
+
+                    <!-- Decorative elements -->
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-blue-200 rounded-full opacity-50"
+                        [@floatAnimation]></div>
+                    <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-indigo-200 rounded-full opacity-30"
+                        [@floatDelayedAnimation]></div>
+                </div>
+            </app-scroll-animation>
+        </div>
+    </div>
+</section>

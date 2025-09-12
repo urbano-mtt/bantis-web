@@ -1,0 +1,91 @@
+<div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <!-- Gradiente base -->
+    <div [class]="getGradientClasses()"></div>
+
+    <!-- Elementos flotantes según variante -->
+    <ng-container [ngSwitch]="variant">
+        <!-- Hero background -->
+        <ng-container *ngSwitchCase="'hero'">
+            <!-- Floating geometric shapes -->
+            <div class="absolute top-20 left-10 w-32 h-32 rounded-full border border-blue-200/20"
+                [class]="animations.float" [style.opacity]="opacityLevel"></div>
+            <div class="absolute top-40 right-20 w-24 h-24 rounded-lg border border-indigo-200/30"
+                [class]="animations.floatDelayed" [style.opacity]="opacityLevel"></div>
+            <div class="absolute bottom-20 left-1/3 w-16 h-16 border border-purple-200/25"
+                [class]="animations.pulseSubtle" [style.opacity]="opacityLevel"></div>
+
+            <!-- Dot pattern -->
+            <div class="absolute top-32 left-1/4 grid grid-cols-3 gap-2" [style.opacity]="opacityLevel">
+                <div class="w-1 h-1 bg-blue-400 rounded-full animate-pulse-subtle" style="animation-delay: 0s;"></div>
+                <div class="w-1 h-1 bg-blue-400 rounded-full animate-pulse-subtle" style="animation-delay: 0.2s;"></div>
+                <div class="w-1 h-1 bg-blue-400 rounded-full animate-pulse-subtle" style="animation-delay: 0.4s;"></div>
+                <div class="w-1 h-1 bg-blue-400 rounded-full animate-pulse-subtle" style="animation-delay: 0.6s;"></div>
+                <div class="w-1 h-1 bg-blue-400 rounded-full animate-pulse-subtle" style="animation-delay: 0.8s;"></div>
+                <div class="w-1 h-1 bg-blue-400 rounded-full animate-pulse-subtle" style="animation-delay: 1s;"></div>
+                <div class="w-1 h-1 bg-blue-400 rounded-full animate-pulse-subtle" style="animation-delay: 1.2s;"></div>
+                <div class="w-1 h-1 bg-blue-400 rounded-full animate-pulse-subtle" style="animation-delay: 1.4s;"></div>
+                <div class="w-1 h-1 bg-blue-400 rounded-full animate-pulse-subtle" style="animation-delay: 1.6s;"></div>
+            </div>
+        </ng-container>
+
+        <!-- Features background -->
+        <ng-container *ngSwitchCase="'features'">
+            <!-- Hexagonal pattern -->
+            <div class="absolute inset-0" [style.opacity]="opacityLevel">
+                <svg class="absolute top-10 right-10 w-40 h-40" viewBox="0 0 100 100">
+                    <polygon points="50,5 90,25 90,75 50,95 10,75 10,25" fill="none" stroke="currentColor"
+                        stroke-width="0.5" class="text-blue-300"
+                        style="stroke-dasharray: 0 100; animation: stroke-draw 8s linear infinite;" />
+                </svg>
+            </div>
+
+            <!-- Floating circle -->
+            <div class="absolute top-1/4 left-10 w-20 h-20 rounded-full bg-gradient-to-br from-blue-100/30 to-indigo-100/30"
+                [class]="animations.floatComplex" [style.opacity]="opacityLevel"></div>
+        </ng-container>
+
+        <!-- Pricing background -->
+        <ng-container *ngSwitchCase="'pricing'">
+            <!-- Grid pattern -->
+            <div class="absolute inset-0" [style.opacity]="opacityLevel">
+                <div class="absolute inset-0"
+                    style="background-image: linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px); background-size: 40px 40px;">
+                </div>
+            </div>
+
+            <!-- Animated diamond -->
+            <div class="absolute top-20 right-1/4 w-8 h-8 rotate-45 border border-indigo-200/40"
+                [class]="animations.float" [style.opacity]="opacityLevel"></div>
+        </ng-container>
+
+        <!-- CTA background -->
+        <ng-container *ngSwitchCase="'cta'">
+            <!-- Radial gradient circles -->
+            <div class="absolute -top-20 -left-20 w-40 h-40 rounded-full bg-gradient-radial from-blue-200/20 to-transparent"
+                [class]="animations.pulseSubtle" [style.opacity]="opacityLevel"></div>
+            <div class="absolute -bottom-20 -right-20 w-60 h-60 rounded-full bg-gradient-radial from-indigo-200/20 to-transparent"
+                [class]="animations.float" [style.opacity]="opacityLevel"></div>
+
+            <!-- Additional floating shapes for CTA -->
+            <div class="absolute top-1/3 right-1/4 w-12 h-12 border border-white/20 rounded-lg"
+                [class]="animations.float" [style.opacity]="opacityLevel"></div>
+            <div class="absolute bottom-1/3 left-1/4 w-8 h-8 bg-yellow-300/20 rounded-full"
+                [class]="animations.floatDelayed" [style.opacity]="opacityLevel"></div>
+        </ng-container>
+
+        <!-- Contact background -->
+        <ng-container *ngSwitchCase="'contact'">
+            <!-- Organic shape -->
+            <div class="absolute top-10 left-1/4 w-32 h-20 rounded-full bg-gray-200/20" [class]="animations.pulseSubtle"
+                [style.opacity]="opacityLevel"></div>
+
+            <!-- Subtle wave pattern -->
+            <div class="absolute bottom-0 left-0 w-full h-20" [style.opacity]="opacityLevel">
+                <svg class="w-full h-full" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M0,60 C300,100 600,20 900,60 C1050,80 1150,40 1200,60 L1200,120 L0,120 Z"
+                        fill="currentColor" class="text-gray-200" />
+                </svg>
+            </div>
+        </ng-container>
+    </ng-container>
+</div>

@@ -1,0 +1,4 @@
+<div #container [class]="className" [@animationTrigger]="isVisible ? 'visible' : 'hidden'"
+    [@.disabled]="!enableAnimations">
+    <ng-content></ng-content>
+</div>
