@@ -3,28 +3,30 @@
 
     <div class="max-w-7xl mx-auto">
         <app-scroll-animation variant="scale" class="block">
-            <div class="relative rounded-3xl overflow-hidden bg-gradient-to-r from-primary to-primary/80 text-primary-foreground transition-transform duration-300 hover:scale-[1.01]"
+            <div class="relative rounded-3xl overflow-hidden shadow-xl"
                 [style.background-image]="backgroundImage"
                 style="background-size: cover; background-position: center; background-blend-mode: overlay;">
-                <!-- Overlay -->
-                <div class="absolute inset-0 bg-primary/80"></div>
+                
+                <!-- Overlay oscuro -->
+                <div class="absolute inset-0 bg-black/60 z-10"></div>
 
-                <!-- Content -->
-                <div class="relative z-10 px-8 py-16 md:py-24 text-center">
+                <!-- Contenido -->
+                <div class="relative z-20 px-8 py-16 md:py-24 text-center">
                     <div class="max-w-4xl mx-auto space-y-8">
-                        <h2 class="text-3xl sm:text-4xl lg:text-5xl transition-all duration-800"
+                        <h2 class="text-3xl sm:text-4xl lg:text-5xl transition-all duration-800 text-white"
                             [class.opacity-100]="isVisible" [class.translate-y-0]="isVisible"
                             [class.opacity-0]="!isVisible" [class.translate-y-8]="!isVisible"
                             style="transition-delay: 200ms">
                             ¿Qué esperas para optimizar tus procesos y
-                            <span class="text-yellow-300 transition-all duration-800" [class.opacity-100]="isVisible"
-                                [class.scale-100]="isVisible" [class.opacity-0]="!isVisible"
-                                [class.scale-75]="!isVisible" style="transition-delay: 600ms">
+                            <span class="text-yellow-400 transition-all duration-800"
+                                [class.opacity-100]="isVisible" [class.scale-100]="isVisible"
+                                [class.opacity-0]="!isVisible" [class.scale-75]="!isVisible"
+                                style="transition-delay: 600ms">
                                 ahorrar tiempo y dinero en tus cálculos de nómina?
                             </span>
                         </h2>
 
-                        <p class="text-xl text-primary-foreground/80 max-w-2xl mx-auto transition-all duration-600"
+                        <p class="text-xl text-white/80 max-w-2xl mx-auto transition-all duration-600"
                             [class.opacity-100]="isVisible" [class.translate-y-0]="isVisible"
                             [class.opacity-0]="!isVisible" [class.translate-y-5]="!isVisible"
                             style="transition-delay: 800ms">
@@ -37,11 +39,11 @@
                             [class.opacity-0]="!isVisible" [class.translate-y-5]="!isVisible"
                             style="transition-delay: 1000ms">
                             <button
-                                class="bg-yellow-400 text-primary hover:bg-yellow-300 rounded-xl px-8 py-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95">
+                                class="bg-yellow-400 text-black hover:bg-yellow-300 rounded-xl px-8 py-2 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95">
                                 Comenzar Ahora
                             </button>
                             <button
-                                class="border border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary rounded-xl px-8 py-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95">
+                                class="border border-white text-white hover:bg-white/10 rounded-xl px-8 py-2 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95">
                                 Agendar Demo
                             </button>
                         </div>
@@ -49,10 +51,9 @@
                 </div>
 
                 <!-- Decorative elements -->
-                <div class="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full animate-float"></div>
-                <div class="absolute bottom-10 right-10 w-32 h-32 bg-white/5 rounded-full animate-float-delayed"></div>
-                <div class="absolute top-1/2 left-20 w-16 h-16 bg-yellow-400/20 rounded-full animate-pulse-subtle">
-                </div>
+                <div class="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full animate-float z-10"></div>
+                <div class="absolute bottom-10 right-10 w-32 h-32 bg-white/5 rounded-full animate-float-delayed z-10"></div>
+                <div class="absolute top-1/2 left-20 w-16 h-16 bg-yellow-400/20 rounded-full animate-pulse-subtle z-10"></div>
             </div>
         </app-scroll-animation>
     </div>

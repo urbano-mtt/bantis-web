@@ -1,12 +1,53 @@
-<div class="min-h-screen bg-[color:var(--background)]">
-    <app-header />
-    <app-hero />
-    <app-benefits />
-    <app-how-it-works />
-    <app-features />
-    <app-pricing />
-    <app-faq />
-    <app-cta />
-    <app-contact />
-    <app-footer />
+<div class="hs-layout bg-white text-gray-800 min-h-screen flex flex-col font-sans">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+        <app-header></app-header>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 space-y-16 overflow-x-hidden">
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <app-hero></app-hero>
+        </section>
+        <section class=" py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <app-benefits></app-benefits>
+            </div>
+        </section>
+        <section class="bg-gray-50 py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <app-how-it-works></app-how-it-works>
+            </div>
+        </section>
+        <section class=" py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <app-features></app-features>
+            </div>
+        </section>
+        <section class="bg-gray-50 py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <app-pricing></app-pricing>
+            </div>
+        </section>
+        <section class=" py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <app-faq></app-faq>
+            </div>
+        </section>
+        <section class="bg-gray-50 py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <app-cta></app-cta>
+            </div>
+        </section>
+        <section class="bg-gray-50 py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <app-contact></app-contact>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 mt-12">
+        <app-footer></app-footer>
+    </footer>
 </div>

@@ -1,4 +1,4 @@
-<footer class="bg-primary text-primary-foreground">
+<footer class="bg-gray-900 text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
             <!-- Brand -->
@@ -16,7 +16,7 @@
                 <div class="flex gap-4">
                     <a *ngFor="let social of socialLinks; let i = index" [href]="social.href"
                         [attr.aria-label]="social.label"
-                        class="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-all duration-300 hover:scale-110 hover:-translate-y-0.5 active:scale-95">
+                        class="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-all duration-300 hover:scale-110 hover:-translate-y-0.5 active:scale-95 motion-safe:animate-pulse">
                         <ng-container [ngSwitch]="social.icon">
                             <!-- Facebook Icon -->
                             <svg *ngSwitchCase="'facebook'" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">

@@ -9,7 +9,7 @@
             </p>
         </app-scroll-animation>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <!-- Contact Information -->
             <app-scroll-animation variant="slideLeft" class="space-y-8 block">
                 <div>
@@ -27,12 +27,12 @@
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div *ngFor="let info of contactInfo; let i = index"
-                        class="bg-card rounded-xl p-6 transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02]"
+                        class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm"
                         [class.opacity-100]="isVisible" [class.translate-y-0]="isVisible" [class.opacity-0]="!isVisible"
                         [class.translate-y-12]="!isVisible" [style.transition-delay]="(i * 100) + 'ms'">
                         <div class="flex items-start gap-4">
                             <div
-                                class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-500 hover:rotate-[360deg]">
+                                class="w-10 h-10 bg-blue-100 text-blue-600 flex items-center justify-center rounded-xl transition-transform duration-500 hover:rotate-[360deg]">
                                 <ng-container [ngSwitch]="info.icon">
                                     <!-- Phone Icon -->
                                     <svg *ngSwitchCase="'phone'" class="w-6 h-6 text-blue-600" fill="none"
@@ -116,7 +116,7 @@
 
             <!-- Contact Form -->
             <app-scroll-animation variant="slideRight" class="block">
-                <div class="bg-card rounded-2xl p-6">
+                <div class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
                     <div class="mb-6 transition-all duration-500" [class.opacity-100]="isFormVisible"
                         [class.translate-y-0]="isFormVisible" [class.opacity-0]="!isFormVisible"
                         [class.translate-y-5]="!isFormVisible">
@@ -131,13 +131,13 @@
                             <div>
                                 <label for="firstName" class="block mb-2">Nombre</label>
                                 <input id="firstName" type="text" placeholder="Juan"
-                                    class="w-full px-4 py-2 border border-border rounded-xl bg-input-background focus:outline-none focus:ring-2 focus:ring-ring"
+                                    class="w-full border border-gray-200 rounded-lg px-4 py-2 bg-gray-50 text-sm focus:ring-2 focus:ring-blue-500 focus:ring-ring"
                                     [(ngModel)]="formData.firstName" name="firstName" />
                             </div>
                             <div>
                                 <label for="lastName" class="block mb-2">Apellido</label>
                                 <input id="lastName" type="text" placeholder="Pérez"
-                                    class="w-full px-4 py-2 border border-border rounded-xl bg-input-background focus:outline-none focus:ring-2 focus:ring-ring"
+                                    class="w-full border border-gray-200 rounded-lg px-4 py-2 bg-gray-50 text-sm focus:ring-2 focus:ring-blue-500 focus:ring-ring"
                                     [(ngModel)]="formData.lastName" name="lastName" />
                             </div>
                         </div>
@@ -147,7 +147,7 @@
                             [class.translate-y-5]="!isFormVisible" style="transition-delay: 200ms">
                             <label for="email" class="block mb-2">Email</label>
                             <input id="email" type="email" placeholder="juan@empresa.com"
-                                class="w-full px-4 py-2 border border-border rounded-xl bg-input-background focus:outline-none focus:ring-2 focus:ring-ring"
+                                class="w-full border border-gray-200 rounded-lg px-4 py-2 bg-gray-50 text-sm focus:ring-2 focus:ring-blue-500 focus:ring-ring"
                                 [(ngModel)]="formData.email" name="email" />
                         </div>
 
@@ -156,7 +156,7 @@
                             [class.translate-y-5]="!isFormVisible" style="transition-delay: 300ms">
                             <label for="company" class="block mb-2">Empresa</label>
                             <input id="company" type="text" placeholder="Nombre de tu Empresa"
-                                class="w-full px-4 py-2 border border-border rounded-xl bg-input-background focus:outline-none focus:ring-2 focus:ring-ring"
+                                class="w-full border border-gray-200 rounded-lg px-4 py-2 bg-gray-50 text-sm focus:ring-2 focus:ring-blue-500 focus:ring-ring"
                                 [(ngModel)]="formData.company" name="company" />
                         </div>
 
@@ -165,7 +165,7 @@
                             [class.translate-y-5]="!isFormVisible" style="transition-delay: 400ms">
                             <label for="message" class="block mb-2">Mensaje</label>
                             <textarea id="message" placeholder="Cuéntanos sobre tus necesidades de nómina..." rows="4"
-                                class="w-full px-4 py-2 border border-border rounded-xl bg-input-background focus:outline-none focus:ring-2 focus:ring-ring resize-none"
+                                class="w-full border border-gray-200 rounded-lg px-4 py-2 bg-gray-50 text-sm focus:ring-2 focus:ring-blue-500 focus:ring-ring resize-none"
                                 [(ngModel)]="formData.message" name="message"></textarea>
                         </div>
 
@@ -173,7 +173,7 @@
                             [class.scale-100]="isFormVisible" [class.opacity-0]="!isFormVisible"
                             [class.scale-75]="!isFormVisible" style="transition-delay: 500ms">
                             <button type="submit"
-                                class="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl px-4 py-3 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+                                class="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg px-4 py-2 transition-all"
                                 (click)="onSubmit($event)">
                                 Enviar Mensaje
                             </button>

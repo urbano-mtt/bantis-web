@@ -7,7 +7,7 @@
                     <app-scroll-animation variant="fadeIn">
                         <h2 class="text-3xl sm:text-4xl">Beneficios</h2>
                     </app-scroll-animation>
-                    <div class="space-y-4">
+                    <div class="space-y-4 mt-3">
                         <div *ngFor="let benefit of benefits; let i = index"
                             class="flex items-start gap-3 transform transition-all duration-700 ease-out"
                             [class.translate-y-0]="isVisible" [class.opacity-100]="isVisible"
@@ -32,30 +32,27 @@
                 <div class="relative">
                     <div
                         class="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-8 shadow-xl transition-transform duration-300 hover:scale-[1.02]">
-                        <div class="bg-card rounded-xl shadow-lg overflow-hidden">
-                            <div class="bg-gradient-to-r from-primary to-primary/80 px-6 py-4 transform origin-left transition-transform duration-800"
-                                [class.scale-x-100]="isPanelVisible" [class.scale-x-0]="!isPanelVisible">
-                                <h3 class="text-primary-foreground">Panel de Administración</h3>
+                        <div class="bg-white dark:bg-white rounded-xl overflow-hidden shadow-xl ring-1 ring-black/5">
+                            <div class="bg-gradient-to-r from-zinc-900 to-zinc-700 px-6 py-4 rounded-t-xl">
+                                <h3 class="text-white font-semibold">Panel de Administración</h3>
                             </div>
-                            <div class="p-6 space-y-4">
+                            <div class="p-6 space-y-4 bg-white">
                                 <div *ngFor="let item of adminItems; let i = index"
                                     class="flex items-center justify-between transform transition-all duration-500"
                                     [class.translate-x-0]="isPanelVisible" [class.opacity-100]="isPanelVisible"
                                     [class.-translate-x-5]="!isPanelVisible" [class.opacity-0]="!isPanelVisible"
                                     [style.transition-delay]="(700 + (i * 100)) + 'ms'">
-                                    <span class="text-muted-foreground">{{ item.label }}</span>
+                                    <span class="text-muted-foreground dark:text-zinc-400">{{ item.label }}</span>
                                     <div class="flex items-center gap-2">
                                         <div class="transition-transform duration-300 hover:rotate-[360deg]">
-                                            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor"
-                                                viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M5 13l4 4L19 7"></path>
+                                            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                             </svg>
                                         </div>
                                         <span class="text-green-600">{{ item.status }}</span>
                                     </div>
                                 </div>
-                                <div class="mt-6 bg-muted rounded-lg p-4 transform transition-all duration-600"
+                                <div class="mt-6 bg-white rounded-xl p-2 shadow-inner transition-all duration-600"
                                     [class.scale-100]="isPanelVisible" [class.opacity-100]="isPanelVisible"
                                     [class.scale-75]="!isPanelVisible" [class.opacity-0]="!isPanelVisible"
                                     style="transition-delay: 1000ms">

@@ -8,7 +8,8 @@ import { NavItem } from '../../models/nav-item-model';
     selector: 'app-header',
     imports: [CommonModule, LucideAngularModule],
     templateUrl: './header.component.html',
-    styles: ``
+    styles: ``,
+    standalone: true
 })
 export class HeaderComponent {
     isMenuOpen = false;
@@ -48,5 +49,10 @@ export class HeaderComponent {
 
     getMobileNavLinkClasses(): string {
         return `text-[color:var(--foreground)]/70 hover:text-[color:var(--primary)] block px-3 py-2 rounded-md ${transitions.default}`;
+    }
+
+    logout(): void {
+        // Lógica de cierre de sesión aquí
+        console.log('Logout clicked');
     }
 }
